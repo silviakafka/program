@@ -4,7 +4,8 @@ public class Solution {
 
 	public static void main(String[] args)
 	{
-		System.out.println(atoi("18446744073709551617"));
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(atoi("-0012a42"));
 	}
 	
 	
@@ -51,34 +52,24 @@ public class Solution {
 	        	int j=0;
 	        	for(;i<str.length();i++)
 	        	{
-	        		if(str.charAt(i)>'9'||str.charAt(i)<'0')
+	        		if(str.charAt(i)<='9'&&str.charAt(i)>='0')
 	        		{
-	        			if(sum>Integer.MAX_VALUE||sum<Integer.MIN_VALUE)
+	        			num=str.charAt(i)-'0';
+		        		sum=sum*10+num;
+	        			if(sum>Integer.MAX_VALUE)
 	        			{
 	        				if(flag)
 	        					return Integer.MAX_VALUE;
 	        				else
 	        					return Integer.MIN_VALUE;
 	        			}
-	        				
-	        			
-	        			else
-	        			return flag?(int) sum:-(int) sum;
 	        		}
-	        		num=str.charAt(i)-'0';
-	        		sum=sum*10+num;
+	        		else
+	        			break;
+	        		
 	        	}
 	        	
-	        	if(sum>Integer.MAX_VALUE||sum<Integer.MIN_VALUE)
-	        	{
-	        		if(flag)
-						return Integer.MAX_VALUE;
-					else
-						return Integer.MIN_VALUE;
-	        	}
-					
-				else
-					return flag?(int) sum:-(int) sum;
+	        	return flag?(int) sum:-(int) sum;
 	        }
 	        
 	        
