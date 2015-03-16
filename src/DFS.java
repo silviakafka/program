@@ -14,6 +14,7 @@ public class DFS {
 	public static void main(String[] args)
 	{
 		Vector<Integer> v=new Vector<Integer>();
+		dfs(1);
 	}
 
 	private static void dfs(int step) {
