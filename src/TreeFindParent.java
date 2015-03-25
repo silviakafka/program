@@ -16,15 +16,12 @@ public class TreeFindParent {
 	{
 		Tree a=new Tree();
 		Tree b=new Tree();
-		
-		
+			
 		findParents(a,result1);
 		findParents(b,result2);
 	}
 
-	private static void findParents(Tree a, ArrayList<Tree> result) {
-		// TODO Auto-generated method stub
-		
+	private static void findParents(Tree a, ArrayList<Tree> result) {		
 		if(a==root)
 			return;
 		Tree parent=findParent(a,root);
@@ -33,7 +30,6 @@ public class TreeFindParent {
 	}
 
 	private static Tree findParent(Tree a, Tree start) {
-		// TODO Auto-generated method stub
 		if(start==null)
 		{}
 			
